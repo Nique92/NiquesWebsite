@@ -254,7 +254,7 @@
     <h2>Contact</h2>
     <p class="muted">Start a project or request a consultation.</p>
 
-    <form>
+    <form id="leadForm">
       <input placeholder="Name" />
       <input placeholder="Email" />
       <select>
@@ -274,6 +274,28 @@
     © 2026 Nique Systems 
   </div>
 </footer>
+<script>
+document.getElementById("leadForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
+  const data = {
+    name: e.target[0].value,
+    email: e.target[1].value,
+    intent: e.target[2].value,
+    message: e.target[3].value
+  };
+
+  await fetch("YOUR_WEBHOOK_URL_HERE", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+
+  alert("Sent successfully - we will contact you shortly.");
+  e.target.reset();
+});
+</script>
 </body>
 </html>
