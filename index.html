@@ -5,246 +5,75 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Nique Systems - AI Systems</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    :root{
-      --bg:#0b0e13;
-      --text:#e6e9ef;
-      --muted:#a9b1bc;
-      --accent:#22d3ee;
-      --primary:#6ee7ff;
-      --primary-2:#8b5cf6;
-      --card:rgba(255,255,255,.04);
-      --border:rgba(255,255,255,.08);
-      --radius:14px;
-      --shadow:0 10px 30px rgba(0,0,0,.45);
-      --container:1100px;
-      --space:80px;
-    }
-
-    *{box-sizing:border-box}
     body{
       margin:0;
       font-family:Inter,system-ui;
-      background:var(--bg);
-      color:var(--text);
+      background:#0b0e13;
+      color:#e6e9ef;
       line-height:1.6;
     }
 
-    a{color:var(--primary);text-decoration:none}
-
     .container{
-      max-width:var(--container);
+      max-width:1100px;
       margin:0 auto;
       padding:0 20px;
     }
 
-    .nav{
-      position:sticky;
-      top:0;
-      z-index:10;
-      background:rgba(10,14,20,.8);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--border);
-    }
-
-    .nav-inner{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      height:64px;
-    }
-
-    .brand{font-weight:800}
-
     .btn{
       padding:10px 14px;
       border-radius:10px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-      display:inline-block;
+      border:1px solid rgba(255,255,255,0.1);
+      background:rgba(255,255,255,0.03);
+      color:white;
+      cursor:pointer;
     }
 
     .btn-primary{
-      background:linear-gradient(135deg,var(--accent),var(--primary-2));
-      color:#000;
+      background:linear-gradient(135deg,#22d3ee,#8b5cf6);
+      color:black;
       font-weight:700;
       border:none;
     }
 
-    .hero{padding:100px 0}
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:40px;
-      align-items:center;
+    section{
+      padding:80px 0;
     }
 
-    h1{
-      font-size:52px;
-      margin:0 0 10px;
-      line-height:1.05;
-    }
+    h1{font-size:48px;margin:0 0 10px}
+    h2{font-size:30px}
 
-    .muted{color:var(--muted)}
-
-    .hero-box{
-      padding:20px;
-      border-radius:16px;
-      background:
-        radial-gradient(circle at top left, rgba(110,231,255,.15), transparent 60%),
-        radial-gradient(circle at bottom right, rgba(139,92,246,.15), transparent 60%),
-        rgba(255,255,255,.02);
-      border:1px solid var(--border);
-      box-shadow:var(--shadow);
-    }
-
-    .panel-title{
-      font-size:12px;
-      letter-spacing:1px;
-      opacity:.7;
-      margin-bottom:6px;
-    }
-
-    .panel-heading{
-      font-size:18px;
-      font-weight:700;
-      margin-bottom:10px;
-    }
-
-    .panel-item{
-      background:rgba(255,255,255,.04);
-      border:1px solid var(--border);
+    input,textarea,select{
+      width:100%;
       padding:10px;
-      border-radius:10px;
-      margin-bottom:8px;
-      font-size:14px;
-    }
-
-    section{padding:var(--space) 0}
-
-    h2{font-size:32px;margin-bottom:10px}
-
-    .grid-3{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-    }
-
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      padding:18px;
-      border-radius:var(--radius);
+      margin:6px 0;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,0.1);
+      background:#111827;
+      color:white;
     }
 
     form{
       display:grid;
       gap:10px;
+      max-width:500px;
     }
 
-    input,textarea,select{
-      padding:10px;
-      border-radius:8px;
-      border:1px solid var(--border);
-      background:#0f1420;
-      color:white;
-    }
-
-    footer{
-      padding:40px 0;
-      border-top:1px solid var(--border);
-      color:var(--muted);
-    }
-
-    @media(max-width:900px){
-      .hero-grid,.grid-3{grid-template-columns:1fr}
-      h1{font-size:38px}
+    #formStatus{
+      font-size:14px;
+      color:#a9b1bc;
     }
   </style>
 </head>
 
 <body>
 
-<div class="nav">
-  <div class="container nav-inner">
-    <div class="brand">Nique Systems</div>
-    <div>
-      <a class="btn" href="#services">What We Do</a>
-      <a class="btn btn-primary" href="#contact">Book</a>
-    </div>
-  </div>
-</div>
-
 <section class="hero">
-  <div class="container hero-grid">
-
-    <div>
-      <h1>AI Systems That Run Business Operations</h1>
-      <p class="muted">
-        We design autonomous AI driven systems that think, decide, and execute across your business.
-      </p>
-
-      <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
-        <a class="btn btn-primary" href="#services">Explore Capabilities</a>
-        <a class="btn" href="#contact">Book Consultation</a>
-      </div>
-    </div>
-
-    <div class="hero-box">
-
-      <div class="panel-title">LIVE SYSTEM OVERVIEW</div>
-      <div class="panel-heading">Autonomous Business Engine</div>
-
-      <div class="panel-item">
-        Decision Layer - interprets requests and determines actions
-      </div>
-
-      <div class="panel-item">
-        Execution Layer - automates workflows and business processes
-      </div>
-
-      <div class="panel-item">
-        Delivery Layer - builds and publishes digital systems
-      </div>
-
-      <div class="panel-item">
-        Interface Layer - receives leads and client interactions
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<section id="services">
   <div class="container">
-
-    <h2>What We Do</h2>
-    <p class="muted">We build capabilities, not software stacks.</p>
-
-    <div class="grid-3">
-
-      <div class="card">
-        <h3>Automated Decision Systems</h3>
-        <p class="muted">AI that interprets input and determines business actions.</p>
-      </div>
-
-      <div class="card">
-        <h3>Business Process Automation</h3>
-        <p class="muted">Eliminate manual work across operations and workflows.</p>
-      </div>
-
-      <div class="card">
-        <h3>Intelligent Digital Systems</h3>
-        <p class="muted">Web platforms that respond and adapt dynamically.</p>
-      </div>
-
-    </div>
-
+    <h1>Nique Systems</h1>
+    <p>AI systems, automation, and intelligent business workflows.</p>
   </div>
 </section>
 
@@ -252,50 +81,63 @@
   <div class="container">
 
     <h2>Contact</h2>
-    <p class="muted">Start a project or request a consultation.</p>
 
     <form id="leadForm">
-      <input placeholder="Name" />
-      <input placeholder="Email" />
-      <select>
-        <option>I know what I need</option>
-        <option>I need help choosing</option>
-        <option>I want strategic guidance</option>
+
+      <input name="name" placeholder="Name" required />
+      <input name="email" placeholder="Email" required />
+
+      <select name="intent">
+        <option value="I know what I need">I know what I need</option>
+        <option value="I need help choosing">I need help choosing</option>
+        <option value="I want strategic guidance">I want strategic guidance</option>
       </select>
-      <textarea placeholder="Describe your goals"></textarea>
-      <button class="btn btn-primary" type="button">Send</button>
+
+      <textarea name="message" placeholder="Describe your goals"></textarea>
+
+      <button class="btn btn-primary" type="submit">Send</button>
+
+      <div id="formStatus"></div>
+
     </form>
 
   </div>
 </section>
 
-<footer>
-  <div class="container">
-    © 2026 Nique Systems 
-  </div>
-</footer>
 <script>
 document.getElementById("leadForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
+  const form = e.target;
+
   const data = {
-    name: e.target[0].value,
-    email: e.target[1].value,
-    intent: e.target[2].value,
-    message: e.target[3].value
+    name: form.name.value,
+    email: form.email.value,
+    intent: form.intent.value,
+    message: form.message.value
   };
 
-  await fetch("YOUR_WEBHOOK_URL_HERE", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  });
+  const status = document.getElementById("formStatus");
+  status.innerText = "Sending...";
 
-  alert("Sent successfully - we will contact you shortly.");
-  e.target.reset();
+  try {
+    await fetch("YOUR_N8N_WEBHOOK_URL_HERE", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    status.innerText = "Sent successfully. We will contact you shortly.";
+    form.reset();
+
+  } catch (err) {
+    console.error(err);
+    status.innerText = "Error sending form. Please try again.";
+  }
 });
 </script>
+
 </body>
 </html>
