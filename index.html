@@ -3,17 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Nique Systems - AI Systems</title>
+  <title>Nique Systems — AI Systems</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
+    :root{
+      --bg:#0b0e13;
+      --text:#e6e9ef;
+      --muted:#a9b1bc;
+      --primary:#6ee7ff;
+      --primary2:#8b5cf6;
+      --card:rgba(255,255,255,0.04);
+      --border:rgba(255,255,255,0.08);
+    }
+
     body{
       margin:0;
       font-family:Inter,system-ui;
-      background:#0b0e13;
-      color:#e6e9ef;
-      line-height:1.6;
+      background:var(--bg);
+      color:var(--text);
     }
 
     .container{
@@ -22,67 +31,103 @@
       padding:0 20px;
     }
 
-    .btn{
-      padding:10px 14px;
-      border-radius:10px;
-      border:1px solid rgba(255,255,255,0.1);
-      background:rgba(255,255,255,0.03);
-      color:white;
-      cursor:pointer;
+    /* NAV */
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      padding:18px 0;
+      border-bottom:1px solid var(--border);
     }
 
-    .btn-primary{
-      background:linear-gradient(135deg,#22d3ee,#8b5cf6);
-      color:black;
-      font-weight:700;
-      border:none;
+    .brand{
+      font-weight:800;
     }
 
-    section{
+    /* HERO */
+    .hero{
       padding:80px 0;
     }
 
-    h1{font-size:48px;margin:0 0 10px}
-    h2{font-size:30px}
+    h1{
+      font-size:54px;
+      margin:0;
+      background:linear-gradient(90deg,var(--primary),var(--primary2));
+      -webkit-background-clip:text;
+      color:transparent;
+    }
 
-    input,textarea,select{
-      width:100%;
-      padding:10px;
-      margin:6px 0;
-      border-radius:8px;
-      border:1px solid rgba(255,255,255,0.1);
+    p{
+      color:var(--muted);
+    }
+
+    /* FORM */
+    .form{
+      margin-top:40px;
+      display:grid;
+      gap:12px;
+      max-width:500px;
+    }
+
+    input,select,textarea{
+      padding:12px;
+      border-radius:10px;
+      border:1px solid var(--border);
       background:#111827;
       color:white;
     }
 
-    form{
-      display:grid;
-      gap:10px;
-      max-width:500px;
+    button{
+      padding:12px;
+      border:none;
+      border-radius:10px;
+      background:linear-gradient(90deg,var(--primary),var(--primary2));
+      font-weight:700;
+      cursor:pointer;
     }
 
-    #formStatus{
-      font-size:14px;
-      color:#a9b1bc;
+    #status{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    /* SECTIONS */
+    .section{
+      padding:60px 0;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .card{
+      padding:18px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:var(--card);
+    }
+
+    @media(max-width:800px){
+      .grid{grid-template-columns:1fr}
+      h1{font-size:36px}
     }
   </style>
 </head>
 
 <body>
 
-<section class="hero">
-  <div class="container">
-    <h1>Nique Systems</h1>
-    <p>AI systems, automation, and intelligent business workflows.</p>
+<div class="container">
+
+  <div class="nav">
+    <div class="brand">Nique Systems</div>
   </div>
-</section>
 
-<section id="contact">
-  <div class="container">
+  <div class="hero">
+    <h1>AI Systems for Modern Business</h1>
+    <p>Automation, AI agents, and intelligent workflows that actually run your business.</p>
 
-    <h2>Contact</h2>
-
-    <form id="leadForm">
+    <form id="leadForm" class="form">
 
       <input name="name" placeholder="Name" required />
       <input name="email" placeholder="Email" required />
@@ -93,16 +138,37 @@
         <option value="I want strategic guidance">I want strategic guidance</option>
       </select>
 
-      <textarea name="message" placeholder="Describe your goals"></textarea>
+      <textarea name="message" placeholder="Tell us what you need"></textarea>
 
-      <button class="btn btn-primary" type="submit">Send</button>
+      <button type="submit">Send Request</button>
 
-      <div id="formStatus"></div>
+      <div id="status"></div>
 
     </form>
-
   </div>
-</section>
+
+  <div class="section">
+    <h2>What We Do</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>AI Assistants</h3>
+        <p>Automate conversations, support, and decision-making.</p>
+      </div>
+
+      <div class="card">
+        <h3>Automation</h3>
+        <p>Eliminate manual work across your business systems.</p>
+      </div>
+
+      <div class="card">
+        <h3>Web + AI Integration</h3>
+        <p>Turn your website into an intelligent system.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
 
 <script>
 document.getElementById("leadForm").addEventListener("submit", async (e) => {
@@ -117,11 +183,11 @@ document.getElementById("leadForm").addEventListener("submit", async (e) => {
     message: form.message.value
   };
 
-  const status = document.getElementById("formStatus");
+  const status = document.getElementById("status");
   status.innerText = "Sending...";
 
   try {
-    await fetch("YOUR_N8N_WEBHOOK_URL_HERE", {
+    const res = await fetch("https://niques.app.n8n.cloud/webhook/website-lead", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -129,7 +195,9 @@ document.getElementById("leadForm").addEventListener("submit", async (e) => {
       body: JSON.stringify(data)
     });
 
-    status.innerText = "Sent successfully. We will contact you shortly.";
+    if (!res.ok) throw new Error("Webhook failed");
+
+    status.innerText = "Sent successfully — we’ll contact you soon.";
     form.reset();
 
   } catch (err) {
