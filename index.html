@@ -93,7 +93,7 @@
 
     .muted{color:var(--muted)}
 
-    /* SYSTEM BOX */
+    /* SYSTEM PANEL */
     .hero-box{
       padding:20px;
       border-radius:16px;
@@ -105,20 +105,20 @@
       box-shadow:var(--shadow);
     }
 
-    .stack-title{
+    .panel-title{
       font-size:12px;
       letter-spacing:1px;
       opacity:.7;
       margin-bottom:6px;
     }
 
-    .stack-heading{
+    .panel-heading{
       font-size:18px;
       font-weight:700;
       margin-bottom:10px;
     }
 
-    .stack-item{
+    .panel-item{
       background:rgba(255,255,255,.04);
       border:1px solid var(--border);
       padding:10px;
@@ -144,7 +144,19 @@
       border-radius:var(--radius);
     }
 
-    /* FOOTER */
+    form{
+      display:grid;
+      gap:10px;
+    }
+
+    input,textarea,select{
+      padding:10px;
+      border-radius:8px;
+      border:1px solid var(--border);
+      background:#0f1420;
+      color:white;
+    }
+
     footer{
       padding:40px 0;
       border-top:1px solid var(--border);
@@ -165,7 +177,7 @@
   <div class="container nav-inner">
     <div class="brand">Nique Systems</div>
     <div>
-      <a class="btn" href="#services">Services</a>
+      <a class="btn" href="#services">What We Do</a>
       <a class="btn btn-primary" href="#contact">Book</a>
     </div>
   </div>
@@ -176,37 +188,37 @@
   <div class="container hero-grid">
 
     <div>
-      <h1>AI Operating System for Modern Business</h1>
+      <h1>AI Systems That Run Business Operations</h1>
       <p class="muted">
-        We build autonomous AI systems using agents, automation pipelines, and deployment infrastructure.
+        We design autonomous AI-driven systems that think, decide, and execute across your business.
       </p>
 
       <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
-        <a class="btn btn-primary" href="#services">Explore System</a>
+        <a class="btn btn-primary" href="#services">Explore Capabilities</a>
         <a class="btn" href="#contact">Book Consultation</a>
       </div>
     </div>
 
-    <!-- SYSTEM STACK -->
+    <!-- SYSTEM PANEL -->
     <div class="hero-box">
 
-      <div class="stack-title">LIVE OPERATING SYSTEM</div>
-      <div class="stack-heading">Execution Architecture</div>
+      <div class="panel-title">LIVE SYSTEM OVERVIEW</div>
+      <div class="panel-heading">Autonomous Business Engine</div>
 
-      <div class="stack-item">
-        🧠 CEO Agent (OpenClaw) — decision routing + intelligent generation
+      <div class="panel-item">
+        🧠 Decision Layer — interprets requests and determines actions
       </div>
 
-      <div class="stack-item">
-        ⚙️ Automation Engine (n8n) — workflow execution + integrations
+      <div class="panel-item">
+        ⚙️ Execution Layer — automates workflows and business processes
       </div>
 
-      <div class="stack-item">
-        🌐 Deployment Layer (GitHub) — code + website hosting + versioning
+      <div class="panel-item">
+        🌐 Delivery Layer — builds and publishes digital systems
       </div>
 
-      <div class="stack-item">
-        📡 Business Interface — email + CRM + lead intake (agents@niquesystems.com)
+      <div class="panel-item">
+        📡 Interface Layer — receives leads and client interactions
       </div>
 
     </div>
@@ -218,24 +230,24 @@
 <section id="services">
   <div class="container">
 
-    <h2>What We Build</h2>
-    <p class="muted">Systems, not services — designed to run your business.</p>
+    <h2>What We Do</h2>
+    <p class="muted">We build capabilities, not software stacks.</p>
 
     <div class="grid-3">
 
       <div class="card">
-        <h3>AI Agents</h3>
-        <p class="muted">Autonomous assistants for sales, support, and operations.</p>
+        <h3>Automated Decision Systems</h3>
+        <p class="muted">AI that interprets input and determines business actions.</p>
       </div>
 
       <div class="card">
-        <h3>Automation Systems</h3>
-        <p class="muted">n8n-driven workflows that eliminate manual work.</p>
+        <h3>Business Process Automation</h3>
+        <p class="muted">Eliminate manual work across operations and workflows.</p>
       </div>
 
       <div class="card">
-        <h3>AI Websites</h3>
-        <p class="muted">Websites connected directly to AI decision systems.</p>
+        <h3>Intelligent Digital Systems</h3>
+        <p class="muted">Web and digital platforms that respond and adapt dynamically.</p>
       </div>
 
     </div>
@@ -256,9 +268,9 @@
       <select>
         <option>I know what I need</option>
         <option>I need help choosing</option>
-        <option>I want AI strategy</option>
+        <option>I want strategic guidance</option>
       </select>
-      <textarea placeholder="Tell us about your project"></textarea>
+      <textarea placeholder="Describe your goals"></textarea>
       <button class="btn btn-primary" type="button">Send</button>
     </form>
 
@@ -267,7 +279,7 @@
 
 <footer>
   <div class="container">
-    © 2026 Nique Systems — AI Operating Systems
+    © 2026 Nique Systems — Autonomous AI Systems
   </div>
 </footer>
 
