@@ -3,25 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Nique Systems — AI Assistants, Automation, Website + AI</title>
+  <title>Nique Systems — AI Operating System</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     :root{
       --bg:#0b0e13;
-      --surface:#121825;
       --text:#e6e9ef;
       --muted:#a9b1bc;
+      --accent:#22d3ee;
       --primary:#6ee7ff;
       --primary-2:#8b5cf6;
-      --accent:#22d3ee;
-      --ring:rgba(110,231,255,.35);
       --card:rgba(255,255,255,.04);
+      --border:rgba(255,255,255,.08);
       --radius:14px;
       --shadow:0 10px 30px rgba(0,0,0,.45);
+      --container:1100px;
       --space:80px;
-      --container:1200px;
     }
 
     *{box-sizing:border-box}
@@ -35,15 +34,20 @@
 
     a{color:var(--primary);text-decoration:none}
 
-    .container{max-width:var(--container);margin:0 auto;padding:0 20px}
+    .container{
+      max-width:var(--container);
+      margin:0 auto;
+      padding:0 20px;
+    }
 
     /* NAV */
     .nav{
-      position:sticky;top:0;
+      position:sticky;
+      top:0;
+      z-index:10;
       background:rgba(10,14,20,.8);
       backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(255,255,255,.06);
-      z-index:10;
+      border-bottom:1px solid var(--border);
     }
 
     .nav-inner{
@@ -58,7 +62,7 @@
     .btn{
       padding:10px 14px;
       border-radius:10px;
-      border:1px solid rgba(255,255,255,.1);
+      border:1px solid var(--border);
       background:rgba(255,255,255,.03);
       color:var(--text);
       display:inline-block;
@@ -68,6 +72,7 @@
       background:linear-gradient(135deg,var(--accent),var(--primary-2));
       color:#000;
       font-weight:700;
+      border:none;
     }
 
     /* HERO */
@@ -81,30 +86,50 @@
     }
 
     h1{
-      font-size:56px;
+      font-size:52px;
       margin:0 0 10px;
       line-height:1.05;
     }
 
-    .sub{color:var(--muted);max-width:55ch}
+    .muted{color:var(--muted)}
 
+    /* SYSTEM BOX */
     .hero-box{
-      min-height:320px;
+      padding:20px;
       border-radius:16px;
       background:
-        radial-gradient(circle at top left, rgba(110,231,255,.2), transparent 50%),
-        radial-gradient(circle at bottom right, rgba(139,92,246,.2), transparent 50%),
-        #121825;
-      border:1px solid rgba(255,255,255,.08);
+        radial-gradient(circle at top left, rgba(110,231,255,.15), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(139,92,246,.15), transparent 60%),
+        rgba(255,255,255,.02);
+      border:1px solid var(--border);
       box-shadow:var(--shadow);
     }
 
-    /* SECTIONS */
+    .stack-title{
+      font-size:12px;
+      letter-spacing:1px;
+      opacity:.7;
+      margin-bottom:6px;
+    }
+
+    .stack-heading{
+      font-size:18px;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    .stack-item{
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--border);
+      padding:10px;
+      border-radius:10px;
+      margin-bottom:8px;
+      font-size:14px;
+    }
+
     section{padding:var(--space) 0}
 
-    h2{font-size:34px;margin-bottom:10px}
-
-    .muted{color:var(--muted)}
+    h2{font-size:32px;margin-bottom:10px}
 
     .grid-3{
       display:grid;
@@ -114,51 +139,21 @@
 
     .card{
       background:var(--card);
-      border:1px solid rgba(255,255,255,.08);
+      border:1px solid var(--border);
       padding:18px;
       border-radius:var(--radius);
     }
 
-    /* SERVICE SELECTOR */
-    .selector{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-    }
-
-    .tag{
-      font-size:12px;
-      padding:4px 8px;
-      border:1px solid rgba(255,255,255,.15);
-      border-radius:999px;
-      display:inline-block;
-      margin-bottom:8px;
-      color:var(--muted);
-    }
-
-    /* CONTACT */
-    form{
-      display:grid;
-      gap:10px;
-    }
-
-    input,textarea,select{
-      padding:10px;
-      border-radius:8px;
-      border:1px solid rgba(255,255,255,.1);
-      background:#0f1420;
-      color:white;
-    }
-
+    /* FOOTER */
     footer{
       padding:40px 0;
-      border-top:1px solid rgba(255,255,255,.06);
+      border-top:1px solid var(--border);
       color:var(--muted);
     }
 
     @media(max-width:900px){
-      .hero-grid,.grid-3,.selector{grid-template-columns:1fr}
-      h1{font-size:40px}
+      .hero-grid,.grid-3{grid-template-columns:1fr}
+      h1{font-size:38px}
     }
   </style>
 </head>
@@ -179,110 +174,81 @@
 <!-- HERO -->
 <section class="hero">
   <div class="container hero-grid">
+
     <div>
-      <h1>AI Systems for Modern Business</h1>
-      <p class="sub">
-        We build AI assistants, automate workflows, and integrate intelligence into your website and operations.
+      <h1>AI Operating System for Modern Business</h1>
+      <p class="muted">
+        We build autonomous AI systems using agents, automation pipelines, and deployment infrastructure.
       </p>
 
       <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
-        <a class="btn btn-primary" href="#services">Explore Services</a>
+        <a class="btn btn-primary" href="#services">Explore System</a>
         <a class="btn" href="#contact">Book Consultation</a>
       </div>
     </div>
 
-   <div class="hero-box" style="padding:20px;display:flex;flex-direction:column;justify-content:center;gap:12px;">
+    <!-- SYSTEM STACK -->
+    <div class="hero-box">
 
-  <div style="font-size:12px;opacity:.7;letter-spacing:1px;">
-    LIVE AI SYSTEM OVERVIEW
-  </div>
+      <div class="stack-title">LIVE OPERATING SYSTEM</div>
+      <div class="stack-heading">Execution Architecture</div>
 
-  <div style="font-size:20px;font-weight:700;">
-    Nique Systems Core Stack
-  </div>
+      <div class="stack-item">
+        🧠 CEO Agent (OpenClaw) — decision routing + intelligent generation
+      </div>
 
-  <div style="display:grid;gap:10px;margin-top:10px;">
+      <div class="stack-item">
+        ⚙️ Automation Engine (n8n) — workflow execution + integrations
+      </div>
 
-    <div style="background:rgba(255,255,255,.04);padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.08);">
-      🤖 AI Agent Layer — GPT-based assistants + decision routing
+      <div class="stack-item">
+        🌐 Deployment Layer (GitHub) — code + website hosting + versioning
+      </div>
+
+      <div class="stack-item">
+        📡 Business Interface — email + CRM + lead intake (agents@niquesystems.com)
+      </div>
+
     </div>
 
-    <div style="background:rgba(255,255,255,.04);padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.08);">
-      ⚙️ Automation Layer — n8n workflow orchestration
-    </div>
-
-    <div style="background:rgba(255,255,255,.04);padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.08);">
-      🌐 Web Layer — GitHub Pages + dynamic AI websites
-    </div>
-
-    <div style="background:rgba(255,255,255,.04);padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.08);">
-      📡 Execution Layer — APIs, email, CRM, and triggers
-    </div>
-
-  </div>
-
-  <div style="margin-top:10px;font-size:12px;opacity:.6;">
-    Status: Active • Modular AI infrastructure running
-  </div>
-
-</div>
   </div>
 </section>
 
 <!-- SERVICES -->
 <section id="services">
   <div class="container">
-    <h2>What We Do</h2>
-    <p class="muted">Focused AI solutions that deliver real business impact.</p>
+
+    <h2>What We Build</h2>
+    <p class="muted">Systems, not services — designed to run your business.</p>
 
     <div class="grid-3">
+
       <div class="card">
-        <h3>AI Assistants</h3>
-        <p class="muted">Custom agents for support, sales, and operations.</p>
+        <h3>AI Agents</h3>
+        <p class="muted">Autonomous assistants for sales, support, and operations.</p>
       </div>
+
       <div class="card">
-        <h3>Automation</h3>
-        <p class="muted">Remove manual work across your business systems.</p>
+        <h3>Automation Systems</h3>
+        <p class="muted">n8n-driven workflows that eliminate manual work.</p>
       </div>
+
       <div class="card">
         <h3>AI Websites</h3>
-        <p class="muted">Websites with embedded intelligence and workflows.</p>
+        <p class="muted">Websites connected directly to AI decision systems.</p>
       </div>
+
     </div>
-  </div>
-</section>
 
-<!-- PATH -->
-<section>
-  <div class="container">
-    <h2>Choose Your Path</h2>
-
-    <div class="selector">
-      <div class="card">
-        <span class="tag">Fast</span>
-        <h3>I know what I need</h3>
-        <p class="muted">Send your requirements for a quick proposal.</p>
-      </div>
-
-      <div class="card">
-        <span class="tag">Guided</span>
-        <h3>I need help choosing</h3>
-        <p class="muted">We help map the right AI solution for you.</p>
-      </div>
-
-      <div class="card">
-        <span class="tag">Strategy</span>
-        <h3>Paid AI strategy</h3>
-        <p class="muted">Deep-dive roadmap and implementation plan.</p>
-      </div>
-    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
+
     <h2>Contact</h2>
+    <p class="muted">Start a project or request a consultation.</p>
 
     <form>
       <input placeholder="Name" />
@@ -295,12 +261,13 @@
       <textarea placeholder="Tell us about your project"></textarea>
       <button class="btn btn-primary" type="button">Send</button>
     </form>
+
   </div>
 </section>
 
 <footer>
   <div class="container">
-    © 2026 Nique Systems
+    © 2026 Nique Systems — AI Operating Systems
   </div>
 </footer>
 
